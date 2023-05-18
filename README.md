@@ -6,7 +6,7 @@ A [BIP47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) compat
 typescript
 
 ```typescript
-import ECPairFactory from 'ecpair';
+import ECPairFactory from 'ecpairgrs';
 import * as ecc from 'tiny-secp256k1';
 import BIP47Factory from '.';
 // You must wrap a tiny-secp256k1 compatible implementation
@@ -14,7 +14,7 @@ const ECPair = ECPairFactory(ecc);
 
 const aliceSeedPhrase = 'response seminar brave tip suit recall often sound stick owner lottery motion';
 const bobSeedPhrase = 'reward upper indicate eight swift arch injury crystal super wrestle already dentist';
-const bobPaymentCode = 'PM8TJS2JxQ5ztXUpBBRnpTbcUXbUHy2T1abfrb3KkAAtMEGNbey4oumH7Hc578WgQJhPjBxteQ5GHHToTYHE3A1w6p7tU6KSoFmWBVbFGjKPisZDbP97';
+const bobPaymentCode = 'PM8TJJsC1EW1Fa1KquT9UDrnFfXxUjA4ZhRsoVFg72XXPUcjc5sC1Gp9D32NgpKMGa6RjQKPthBZAuCvXncSLf4v91dEwuc7n5aKB9VUyZh684NUaXVv';
 
 // alice private bip47
 const aliceBip47 = BIP47Factory(ecc).fromBip39Seed(aliceSeedPhrase);
@@ -62,8 +62,3 @@ see tests for more examples.
 [BIP-47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki)
 
 [BIP-47 Test Vectors](https://gist.github.com/SamouraiDev/6aad669604c5930864bd)
-
-## Donations
-We appreciate your donations if you found this repository useful :)
-
-[paynym.is/+frostydarkness08a](https://paynym.is/+frostydarkness08a)

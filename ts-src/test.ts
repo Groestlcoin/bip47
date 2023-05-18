@@ -1,4 +1,4 @@
-import ECPairFactory from 'ecpair';
+import ECPairFactory from 'ecpairgrs';
 import * as ecc from 'tiny-secp256k1';
 import BIP47Factory from '.';
 // You must wrap a tiny-secp256k1 compatible implementation

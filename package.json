@@ -3,9 +3,9 @@
   "version": "1.0.1",
   "description": "bip47 utility functions",
   "keywords": [
-    "bitcoin",
-    "bitcoinjs",
-    "bitcoinjs-lib",
+    "groestlcoin",
+    "groestlcoinjs",
+    "groestlcoinjs-lib",
     "paynyms",
     "payment-codes",
     "bip47",
@@ -27,19 +27,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spsina/bip47.git"
+    "url": "git+https://github.com/Groestlcoin/bip47.git"
   },
   "files": [
     "src",
     "types"
   ],
   "dependencies": {
-    "bip32": "^3.0.1",
+    "bip32grs": "3.0.1",
     "bip39": "^3.0.4",
-    "bitcoinjs-lib": "^6.0.1",
-    "bs58check": "^2.1.1",
+    "groestlcoinjs-lib": "6.0.2",
+    "bs58grscheck": "2.1.2",
     "create-hmac": "^1.1.7",
-    "ecpair": "^2.0.1",
+    "ecpairgrs": "2.0.1",
     "tiny-secp256k1": "^1.1.6"
   },
   "devDependencies": {
@@ -56,6 +56,6 @@
   "author": "Sina Parvizi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spsina/bip47/issues"
+    "url": "https://github.com/Groestlcoin/bip47/issues"
   }
 }

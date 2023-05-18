@@ -1,9 +1,9 @@
-import * as bitcoin from 'bitcoinjs-lib';
-import { Network } from 'bitcoinjs-lib';
+import * as bitcoin from 'groestlcoinjs-lib';
+import { Network } from 'groestlcoinjs-lib';
 import {
   BIP32Interface,
   TinySecp256k1Interface as TinySecp256k1InterfaceBIP32,
-} from 'bip32';
+} from 'bip32grs';
 
 export type NetworkCoin = {
   network: Network;

@@ -1,5 +1,5 @@
-import BIP32Factory, { BIP32API, BIP32Interface } from 'bip32';
-import * as bitcoin from 'bitcoinjs-lib';
+import BIP32Factory, { BIP32API, BIP32Interface } from 'bip32grs';
+import * as bitcoin from 'groestlcoinjs-lib';
 import * as crypto from './crypto';
 import { xor } from './xor';
 
@@ -12,7 +12,7 @@ import {
 } from './interfaces';
 import { mainnetData } from './networks';
 import getUtils from './utils';
-const bs58check = require('bs58check');
+const bs58grscheck = require('bs58grscheck');
 
 export function BIP47Factory(ecc: TinySecp256k1Interface): BIP47API {
   // TODO: implement a test assertion function for ecc
@@ -114,7 +114,7 @@ export function BIP47Factory(ecc: TinySecp256k1Interface): BIP47API {
     }
 
     getSerializedPaymentCode(): string {
-      return bs58check.encode(
+      return bs58grscheck.encode(
         Buffer.concat([Buffer.from([71]), this.getBinaryPaymentCode()]),
       );
     }
@@ -264,7 +264,7 @@ export function BIP47Factory(ecc: TinySecp256k1Interface): BIP47API {
         67,
       );
 
-      return bs58check.encode(
+      return bs58grscheck.encode(
         Buffer.concat([Buffer.from([71]), binaryPaymentCode]),
       );
     }

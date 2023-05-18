@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BIP47Factory = void 0;
-const bip32_1 = require("bip32");
-const bitcoin = require("bitcoinjs-lib");
+const bip32_1 = require("bip32grs");
+const bitcoin = require("groestlcoinjs-lib");
 const crypto = require("./crypto");
 const xor_1 = require("./xor");
 const networks_1 = require("./networks");
 const utils_1 = require("./utils");
-const bs58check = require('bs58check');
+const bs58grscheck = require('bs58grscheck');
 function BIP47Factory(ecc) {
     // TODO: implement a test assertion function for ecc
     const bip32 = (0, bip32_1.default)(ecc);
@@ -59,7 +59,7 @@ function BIP47Factory(ecc) {
             return this.getAddressFromNode(node);
         }
         getSerializedPaymentCode() {
-            return bs58check.encode(Buffer.concat([Buffer.from([71]), this.getBinaryPaymentCode()]));
+            return bs58grscheck.encode(Buffer.concat([Buffer.from([71]), this.getBinaryPaymentCode()]));
         }
         getBinaryPaymentCode() {
             if (!this.network || !this.RootPaymentCodeNode)
@@ -152,7 +152,7 @@ function BIP47Factory(ecc) {
             const binaryPaymentCode = opReturnOutput.script.slice(3);
             binaryPaymentCode.fill((0, xor_1.xor)(s.slice(0, 32), binaryPaymentCode.slice(3, 35)), 3, 35);
             binaryPaymentCode.fill((0, xor_1.xor)(s.slice(32, 64), binaryPaymentCode.slice(35, 67)), 35, 67);
-            return bs58check.encode(Buffer.concat([Buffer.from([71]), binaryPaymentCode]));
+            return bs58grscheck.encode(Buffer.concat([Buffer.from([71]), binaryPaymentCode]));
         }
     }
     function fromPaymentCode(paymentCode, network = networks_1.mainnetData) {

@@ -1,7 +1,7 @@
 "use strict";
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-const ecpair_1 = require("ecpair");
+const ecpair_1 = require("ecpairgrs");
 const ecc = require("tiny-secp256k1");
 const _1 = require(".");
 // You must wrap a tiny-secp256k1 compatible implementation

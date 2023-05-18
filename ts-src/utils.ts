@@ -1,17 +1,17 @@
 import { NetworkCoin, TinySecp256k1Interface } from './interfaces';
-import { BIP32API, BIP32Interface } from 'bip32';
+import { BIP32API, BIP32Interface } from 'bip32grs';
 import { mainnetData } from './networks';
 import * as bip39 from 'bip39';
-import * as bitcoin from 'bitcoinjs-lib';
+import * as bitcoin from 'groestlcoinjs-lib';
 
-const bs58check = require('bs58check');
+const bs58grscheck = require('bs58grscheck');
 
 export default function getUtils(ecc: TinySecp256k1Interface, bip32: BIP32API) {
   const getPublicPaymentCodeNodeFromBase58 = (
     paymentCode: string,
     network: NetworkCoin,
   ): BIP32Interface => {
-    const rawPaymentCode = bs58check.decode(paymentCode);
+    const rawPaymentCode = bs58grscheck.decode(paymentCode);
 
     return bip32.fromPublicKey(
       rawPaymentCode.slice(3, 36),

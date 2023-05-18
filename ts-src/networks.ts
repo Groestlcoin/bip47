@@ -1,4 +1,4 @@
-import { testnet, bitcoin } from 'bitcoinjs-lib/src/networks'
+import { testnet, bitcoin } from 'groestlcoinjs-lib/src/networks'
 import { NetworkCoin } from './interfaces'
 
 const testnetData: NetworkCoin = {
@@ -7,7 +7,7 @@ const testnetData: NetworkCoin = {
 }
 const mainnetData: NetworkCoin = {
     'network': bitcoin,
-    'coin': '0'
+    'coin': '17'
 }
 
 export { testnetData, mainnetData }
